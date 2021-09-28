@@ -77,5 +77,64 @@ NOTE:
 
 <br /><br />
 ## Step 4: Open an iFrame and Pass information ##
+Cuddly fiesta uses iFrame to embed the STAT webpage into the browser.
 
+Create an iframe 
+```
+    <iframe id="cuddly-fiesta" frameBorder="0"> </iframe>
+```
 
+css
+```
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+iframe {
+  width: 100%;
+  height: 95vh;
+}
+
+*{
+    box-sizing: border-box;
+}
+```
+
+javascript 
+<br/>
+Get the iframe refence and set the source
+```
+var iframe = document.getElementById('cuddly-fiesta');
+iframe.src = 'https://example.com/';
+```
+<br>
+
+The iframes raises an event with status ready, on recieving this send the patient information and token.
+Once the doctor finishes writing the prescription the iframe raises an event with status done.  
+
+```
+var contentWindow = iframe.contentWindow;
+
+window.addEventListener("message", (event) => {
+  var status = event.data.status;
+  if (staus == 'ready'){
+    contentWindow.postMessage({
+      "patientName": String,
+      "patientAge": String,
+      "patientSex": String,
+      "token": String
+    }, 
+  'https://example.com')
+  }
+  
+  if(status == 'done'){
+    "precription_url": event.data.url,
+    "prescription_password": event.data.password,
+    //redirect
+  }
+  
+}, false);
+```
