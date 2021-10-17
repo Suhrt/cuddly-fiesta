@@ -12,7 +12,7 @@ To obtain the auth_key contact [dr.suhrt@gmail.com](mailto:suhrt2@gmail.com?subj
 ## Step 2: Create doctor's profile ##
 
 ```
-POST example.com/create-profile
+POST https://stat-api.link/create-profile
 
 body:  {
    "auth_key": String,
@@ -26,11 +26,11 @@ body:  {
 }
 ```
 
-This will return
+This will return an internal reference id.
 
 ```
 body: {
-  "status": "ok"
+  "stat_id": "4efbad10-d014-40b4-9d22-b06414044ef6"
 }
 ```
 
@@ -50,11 +50,11 @@ NOTE:
 Cuddly fiesta & STAT leaves the doctor authentication and verification to the website opening the iFrame. However each session is authenticated with a JWT token. To get the jwt token:
 
 ```
-POST example.com/token
+POST https://stat-api.link/token
 
 body: {
   "auth_key": String,
-  "user_id: String 
+  "user_id: String //use your org's user id 
 }
 
 ```
