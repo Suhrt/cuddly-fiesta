@@ -108,7 +108,7 @@ javascript
 Get the iframe refence and set the source
 ```
 var iframe = document.getElementById('cuddly-fiesta');
-iframe.src = 'https://example.com/';
+iframe.src = 'https://stat-rx.netlify.app';
 ```
 <br>
 
@@ -116,25 +116,29 @@ The iframes raises an event with status ready, on recieving this send the patien
 Once the doctor finishes writing the prescription the iframe raises an event with status done.  
 
 ```
-var contentWindow = iframe.contentWindow;
-
 window.addEventListener("message", (event) => {
+  
   var status = event.data.status;
-  if (staus == 'ready'){
+  
+  if (status == 'ready'){
     contentWindow.postMessage({
-      "patientName": String,
-      "patientAge": String,
-      "patientSex": String,
-      "token": String
-    }, 
-  'https://example.com')
+      "patientName": "String",
+      "patientAge": "String",
+      "patientSex": "String",
+      "token": "String"
+    }, '*')=
   }
-  
+    
   if(status == 'done'){
-    "precription_url": event.data.url,
-    "prescription_password": event.data.password,
-    //redirect
+      let rx_url = event.data.prescription_url
+      let rx_password = event.data.prescription_password
+      //Store url and handle navigation
   }
-  
+    
 }, false);
+
 ```
+
+Examples:
+1. Request for registering users & generating tokens: [![Run in Postman](https://run.pstmn.io/button.svg)](https://god.gw.postman.com/run-collection/17756415-70efa4d9-d3ae-481d-9fd4-2d3437d40660?action=collection%2Ffork&collection-url=entityId%3D17756415-70efa4d9-d3ae-481d-9fd4-2d3437d40660%26entityType%3Dcollection%26workspaceId%3D7631ec9c-9cfc-4a30-8344-451e39828421)
+2. Web app with Iframe embedded: https://glitch.com/edit/#!/organic-honored-share?path=README.md%3A1%3A0
