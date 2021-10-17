@@ -126,7 +126,7 @@ window.addEventListener("message", (event) => {
       "patientAge": "String",
       "patientSex": "String",
       "token": "String"
-    }, '*')=
+    }, '*')
   }
     
   if(status == 'done'){
