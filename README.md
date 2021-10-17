@@ -140,5 +140,5 @@ window.addEventListener("message", (event) => {
 ```
 
 Examples:
-1. Request for registering users & generating tokens: [![Run in Postman](https://run.pstmn.io/button.svg)](https://god.gw.postman.com/run-collection/17756415-70efa4d9-d3ae-481d-9fd4-2d3437d40660?action=collection%2Ffork&collection-url=entityId%3D17756415-70efa4d9-d3ae-481d-9fd4-2d3437d40660%26entityType%3Dcollection%26workspaceId%3D7631ec9c-9cfc-4a30-8344-451e39828421)
+1. Request for registering users & generating tokens:  [![Run in Postman](https://run.pstmn.io/button.svg)](https://god.gw.postman.com/run-collection/17756415-70efa4d9-d3ae-481d-9fd4-2d3437d40660?action=collection%2Ffork&collection-url=entityId%3D17756415-70efa4d9-d3ae-481d-9fd4-2d3437d40660%26entityType%3Dcollection%26workspaceId%3D7631ec9c-9cfc-4a30-8344-451e39828421)
 2. Web app with Iframe embedded: https://glitch.com/edit/#!/organic-honored-share?path=README.md%3A1%3A0
