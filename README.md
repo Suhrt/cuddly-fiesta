@@ -42,7 +42,6 @@ NOTE:
 
 ℹ️ for bulk createion of profiles contact [dr.suhrt@gmail.com](mailto:suhrt2@gmail.com?subject=Cuddly%20Fish%20auth%20key)
 
-
 <br /><br />
 
 ## Step 3: Session Authentication ##
@@ -136,6 +135,34 @@ window.addEventListener("message", (event) => {
   }
     
 }, false);
+
+```
+<br></br>
+
+### Modify a profile ###
+All fields are required, any unfilled will be set to null.
+
+```
+POST https://stat-api.link/update_user
+
+{
+    "auth_key": "{{auth_key}}",
+    "user_id": "2", 
+    "user_name": "String",
+    "qualifications": "String",
+    "medical_council": "String",
+    "reg_no": "String"
+}
+```
+
+### Delete a profile ###
+```
+POST https://stat-api.link/delete_user
+
+{
+    "auth_key": "{{auth_key}}",
+    "user_id": "2"
+}
 
 ```
 
