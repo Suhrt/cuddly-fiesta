@@ -12,7 +12,7 @@ To obtain the auth_key contact [dr.suhrt@gmail.com](mailto:suhrt2@gmail.com?subj
 ## Step 2: Create doctor's profile ##
 
 ```
-POST https://stat-api.link/create-profile
+POST https://stat-api.link/register_user
 
 body:  {
    "auth_key": String,
